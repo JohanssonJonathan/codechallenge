@@ -17,6 +17,10 @@ class Bottom extends Component {
     return(
 
         <div className="bottom">
+
+          <div onClick={this.props.resetValues}>
+            <span>Continue shopping</span>
+          </div>
           <div onClick={this.props.resetValues}>
             <img src="./surf.svg"/>
             <span>Checkout</span>
