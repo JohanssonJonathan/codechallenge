@@ -31,6 +31,8 @@ class Cartbtn extends Component {
 
 
   render() {
+
+
     return (
 
         <React.Fragment>
@@ -53,22 +55,25 @@ class Cartbtn extends Component {
 
 
 
-              <CSSTransition
-                in={this.state.cartbtn}
-                appear={true}
-                timeout={900}
-                classNames="fade"
-                onEntered={() => {
-                    this.setState({
-                      line:true
-                    })
-                }}
-              >
-
-                <span className="cartbtn" onClick={this.leaveCartBtnComponent} >
-                View cart
-                </span>
-              </CSSTransition>
+                  <CSSTransition
+                    in={this.props.showBtn}
+                    appear={true}
+                    timeout={900}
+                    classNames="fade"
+                    onEntered={() => {
+                      console.log("hidjisjdfij")
+                        this.setState({
+                          line:true
+                        })
+                    }}
+                  >
+                    <div  className="cartbtn" onClick={this.leaveCartBtnComponent}>
+                      <img src="./surf.svg"/>
+                      <span >
+                        View cart
+                      </span>
+                    </div>
+                  </CSSTransition>
 
               <CSSTransition
                 in={this.state.line}

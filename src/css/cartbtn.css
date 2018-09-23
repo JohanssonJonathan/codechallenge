@@ -83,7 +83,7 @@
 
 .startBtn{
   position: relative;
-  top:330px;
+  top:230px;
 }
 
 
@@ -101,7 +101,10 @@
   margin: auto;
   color:rgba(0,0,0,0.7);
   font-family: 'Montserrat', sans-serif;
-  cursor:pointer;
+  cursor: pointer;
+}
+
+.cartbtn img {
 }
 
 .fade-appear{

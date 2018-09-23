@@ -12,31 +12,38 @@ class App extends Component {
 
     this.state={
       showCart: false,
+      cartbtn:true,
     }
 
     this.cartBtnClicked = this.cartBtnClicked.bind(this)
   }
 
 
-  cartBtnClicked = ()=>{
-    console.log("cartbtn clicked")
-    this.setState({
-      showCart:true
-    })
+  cartBtnClicked = (checkout)=>{
+
+    console.log("cartbtn clicked", checkout)
+    if(checkout){
+      this.setState({
+        showCart:false,
+        cartbtn:true
+      })
+    }else{
+      this.setState({
+        showCart:true,
+        cartbtn:false
+      })
+    }
   }
 
 
 
   render() {
 
-    console.log(this.state.showCart)
     return (
       <div className="App">
 
-          <Cartbtn cartBtnClicked={this.cartBtnClicked}/>
-
-          <Cart showCart={this.state.showCart}/>
-
+          <Cartbtn showBtn={this.state.cartbtn} cartBtnClicked={this.cartBtnClicked}/>
+          <Cart cartBtnClicked={this.cartBtnClicked} showCart={this.state.showCart}/>
 
       </div>
     );

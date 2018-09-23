@@ -1,0 +1,33 @@
+.bottom{
+  bottom:0;
+  width:100%;
+  height: 100px;
+  background: url("/josh-withers-635130-unsplash.jpg");
+  background-size: 100%;
+  border-top: 2px solid rgba(0,0,0,0.7);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.bottom div {
+  position: relative;
+  width: 100px;
+  cursor: pointer;
+  top:-70px;
+  transition: transform 0.3s ease-out;
+  z-index: 2;
+}
+.bottom div:hover{
+  transform: scale(0.9);
+  color:white;
+}
+.bottom div img{
+  position: relative;
+}
+
+.bottom div span{
+  position: relative;
+}
