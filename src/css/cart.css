@@ -1,0 +1,201 @@
+
+.cart{
+  opacity: 0;
+  text-align: center;
+  height: 0px;
+  width: 100%;
+  margin: auto;
+  background: rgba(255,255,255,1);
+  position: absolute;
+  bottom:0px;
+  border-top: 1px solid rgba(0,0,0,0.6);
+}
+
+.cart > div:first-child{
+  width: 15%;
+  padding:10px;
+  background: rgba(255,255,255,0.4);
+  position: relative;
+  top:-44px;
+  left: -20px;
+  transform: skewX(30deg);
+}
+
+#yourCartText{
+  color:rgba(0,0,0,0.7);
+  transform: skewX(-30deg);
+}
+
+
+.cart >div:last-child{
+  width: 100%;
+  background: white;
+  display: none;
+  margin: 0;
+
+}
+
+.productInfo{
+  margin: auto;
+  width: 90%;
+  display: flex;
+  background: ;
+
+  justify-content: space-around;
+  border-bottom: 2px solid rgba(0,0,0,0.6);
+}
+
+.productInfo h5{
+  width:300px;
+  text-align: center;
+}
+
+.cart ul{
+  margin:auto;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+
+}
+
+.cart ul li{
+  margin-top: 40px;
+  align-items: center;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.cart ul li:nth-child(odd){
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+}
+
+.cart ul li div{
+  width:250px;
+}
+
+
+.cart ul li img{
+
+  width:250px;
+  margin: 0;
+
+}
+
+
+.showCart-enter{
+  height: 0;
+
+}
+
+.showCart-active{
+  opacity: 1;
+  height:80%;
+
+  transition: height 500ms ease-in-out,opacity 500ms ;
+
+}
+
+.showCart-enter-done{
+  opacity: 1;
+  height: 80%;
+  transition: height 500ms ease-in-out, opacity 500ms;
+
+}
+
+
+.showCart-exit{
+  opacity: 1;
+  height: 150%;
+}
+.showCart-exit-active{
+  height:0;
+
+  transition: height 500ms ease-in;
+}
+
+.showCart-exit-done{
+  height:0;
+  display: none;
+}
+
+
+.totalCostInfo {
+  display: flex;
+  width: 80%;
+  margin:auto;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.totalCostInfo #totalCostMenu{
+  margin: auto;
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  top:0;
+  z-index: 1;
+  border-top: 1px solid rgba(0,0,0,0.7);
+  padding-top:0px;
+  padding-bottom: 50px;
+  flex-direction:column;
+  position: relative;
+  height: 100px;
+
+}
+
+#totalCostMenu > div{
+  width:20%;
+  position: absolute;
+  top:0;
+  right:20px;
+
+}
+
+#totalCostMenu span{
+
+  position: relative;
+  padding:5px;
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+
+.image {
+    display: flex;
+
+}
+
+.image > div:last-child{
+  font-size: 0.7em;
+  width: 100px;
+}
+
+#disc::after{
+  position: absolute;
+  right: 60px;
+  content: "Discount";
+  color:red;
+  font-size: 0.8em;
+}
+
+
+#totalCostPrice{
+  border-top:2px solid rgba(0,0,0,0.7)
+}
+
+
+.selectAmount button{
+  background: white;
+  cursor: pointer;
+  margin:10px;
+  text-shadow: none;
+  box-shadow: none;
+}
