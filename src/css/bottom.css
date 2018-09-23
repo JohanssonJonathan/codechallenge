@@ -8,11 +8,32 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
+  position: relative;
 
 }
 
+.bottom div:first-child{
+  position: absolute;
+  left:-20px;
+  padding: 10px;
+  cursor: pointer;
+  top:3px;
+  background: rgba(255,255,255,0.4);
+  width:200px;
+  z-index: 2;
+  transform: skew(-20deg)
+}
 
-.bottom div {
+.bottom div:first-child span {
+  display: block;
+  color:rgba(0,0,0,0.7);
+
+  transform: skew(20deg)
+}
+
+
+
+.bottom div:last-child {
   position: relative;
   width: 100px;
   cursor: pointer;
@@ -20,14 +41,14 @@
   transition: transform 0.3s ease-out;
   z-index: 2;
 }
-.bottom div:hover{
+.bottom div:last-child:hover{
   transform: scale(0.9);
   color:white;
 }
-.bottom div img{
+.bottom div:last-child img{
   position: relative;
 }
 
-.bottom div span{
+.bottom div:last-child span{
   position: relative;
 }
