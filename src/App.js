@@ -1,18 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Cartbtn from "./Cartbtn.js";
+import Cart from "./Cart.js"
+import './css/App.css';
+
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class App extends Component {
+
+  constructor(){
+    super();
+
+    this.state={
+      showCart: false,
+    }
+
+    this.cartBtnClicked = this.cartBtnClicked.bind(this)
+  }
+
+
+  cartBtnClicked = ()=>{
+    console.log("cartbtn clicked")
+    this.setState({
+      showCart:true
+    })
+  }
+
+
+
   render() {
+
+    console.log(this.state.showCart)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+          <Cartbtn cartBtnClicked={this.cartBtnClicked}/>
+
+          <Cart showCart={this.state.showCart}/>
+
+
       </div>
     );
   }
