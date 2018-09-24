@@ -9,98 +9,103 @@ class Cartbtn extends Component {
   constructor(){
     super();
     this.state={
-      cartbtn : true,
       line:false,
       ruta:false,
-      rutaUnder:false
+      rutaUnder:false,
     }
   }
-
 
 
   leaveCartBtnComponent = ()=>{
 
     this.setState({
-      cartbtn:false,
       line:false,
-      ruta:false
+      ruta:false,
+      rutaUnder:false,
     })
 
-    this.props.cartBtnClicked()
-  }
+    function isEmpty(obj) {
+      for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+          return true;
+        }
+          return false;
+    }
 
-
-  render() {
-
-
-    return (
-
-        <React.Fragment>
-
-            <CSSTransition
-              in={this.state.ruta}
-              timeout={200}
-              classNames="ruta"
-              onEntered={() => {
-                  this.setState({
-                    rutaUnder:true
-                  })
-              }}
-            >
-              <div className="ruta">
-
-              </div>
-            </CSSTransition>
-          <div className="startBtn">
+    if(isEmpty(this.props)) {
+      this.props.cartBtnClicked()
+    }
+}
 
 
 
-                  <CSSTransition
-                    in={this.props.showBtn}
-                    appear={true}
-                    timeout={900}
-                    classNames="fade"
-                    onEntered={() => {
-                      console.log("hidjisjdfij")
-                        this.setState({
-                          line:true
-                        })
-                    }}
-                  >
-                    <div  className="cartbtn" onClick={this.leaveCartBtnComponent}>
-                      <img src="./surf.svg"/>
-                      <span >
-                        View cart
-                      </span>
-                    </div>
-                  </CSSTransition>
-
-              <CSSTransition
-                in={this.state.line}
-                timeout={400}
-                classNames="line"
-                onEntered={() => {
-                    this.setState({
-                      ruta:true
-                    })
-                }}
-              >
-                <div id="line">
-                </div>
-              </CSSTransition>
+render() {
 
 
-          </div>
-          <CSSTransition
-            in={this.state.ruta}
-            timeout={200}
-            classNames="rutaUnder"
-          >
-            <div className="rutaUnder">
+  return (
 
-            </div>
-          </CSSTransition>
-        </React.Fragment>
+  <React.Fragment>
+
+    <CSSTransition
+      in={this.state.ruta}
+      timeout={200}
+      classNames="ruta"
+      onEntered={() => {
+        this.setState({
+          rutaUnder:true
+        })
+      }}
+    >
+      <div className="ruta">
+
+      </div>
+    </CSSTransition>
+    <div className="startBtn">
+
+      <CSSTransition
+        in={this.props.showBtn}
+        appear={true}
+        timeout={900}
+        classNames="fade"
+        onEntered={() => {
+          this.setState({
+            line:true
+          })
+        }}
+      >
+        <div  className="cartbtn" onClick={this.leaveCartBtnComponent}>
+          <img src="./surf.svg"/>
+          <span >
+            View cart
+          </span>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={this.state.line}
+        timeout={400}
+        classNames="line"
+        onEntered={() => {
+          this.setState({
+            ruta:true
+          })
+        }}
+      >
+        <div id="line">
+        </div>
+      </CSSTransition>
+
+    </div>
+    <CSSTransition
+      in={this.state.ruta}
+      timeout={200}
+      classNames="rutaUnder"
+    >
+      <div className="rutaUnder">
+
+      </div>
+    </CSSTransition>
+  </React.Fragment>
     );
   }
 }
